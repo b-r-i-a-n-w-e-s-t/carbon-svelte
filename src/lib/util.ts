@@ -154,6 +154,7 @@ export interface FilterUIFilters {
   f?: any
   q?: any
   t?: any
+  p?: any
   search?: string
 }
 
@@ -168,7 +169,7 @@ export function extractFilters (url: URL) {
 
 export function extractMergedFilters (url: URL) {
   const params = extractFilters(url)
-  return { ...params.f, ...params.q, t: params.t, search: params.search }
+  return { ...params.f, ...params.q, ...params.p, t: params.t, search: params.search }
 }
 
 export function addFilters (url: URL, filters: FilterUIFilters) {
