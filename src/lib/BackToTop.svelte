@@ -12,7 +12,7 @@
 <svelte:window bind:scrollY={scrollHeight} />
 
 {#if showGotoTop}
-  <a href="#main-content" in:fade out:fade class="[ print:hidden fixed right-6 bottom-4 inline-flex items-center gap-2 bg-tagyellow-200 py-2 px-4 ]">
+  <a href="#main-content" in:fade out:fade class="go-to-top [ print:hidden fixed right-6 bottom-4 inline-flex items-center gap-2 bg-tagyellow-200 py-2 px-4 ]">
     <span>Back to top</span>
     <ChevronUpOutline />
   </a>
@@ -24,5 +24,8 @@
   @media (prefers-reduced-motion: no-preference) {
     scroll-behavior: smooth;
   }
+}
+:global(body:has(.go-to-top)) :global(#main-content) {
+  margin-block-end: 4.5rem;
 }
 </style>
