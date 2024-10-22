@@ -118,7 +118,7 @@
 
     {#await $layoutInfo.title then layoutTitle}
       {#if layoutTitle}
-        <div class="breadcrumbs [ w-full bg-stone-300 py-[4px] px-[16px] ]">
+        <div class="breadcrumbs [ w-full py-[4px] px-[16px] ]">
           <Breadcrumb>
             {#each $layoutInfo.breadcrumbs as bc}
               {#await bc.title then title}
@@ -164,6 +164,11 @@
 </LayoutBase>
 
 <style type="postcss">
+
+  .breadcrumbs {
+    background-color: var(--cds-ui-01, #f4f4f4);
+    border-bottom: 1px solid var(--cds-ui-03, #D9D9D9)
+  }
   header.fixed~.bx--content {
     margin-top: var(--nav-height-offset, 7rem);
   }
